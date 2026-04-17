@@ -1,0 +1,10 @@
+DesireStateConfig.ps1 
+
+Function DesireStateConfig (CmdletBinding [required=true]) {
+    $DSConf = Get-DesireStateConfigure -name <str> format-table CurrentUsers, Processes, Date  | Outfile-host
+    Write-host "DesiredStateConf:" { $DSConf. }
+    $Module = Get-Module -name <str> -WMI | select {$_.WMI like % %}
+        { $PSremoting = Get-PSSession | Select {$_. like %port% }
+          if $PSremoting is disabled do: {
+            $Script = Set-Script -path:\Powershell\Windows\Software\QSS24\.*
+            -Force }
