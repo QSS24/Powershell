@@ -1,0 +1,14 @@
+WindowsAD.ps1
+
+Function $Updates ([cmdletbinding() required=true],
+                   [], 
+                   [], 
+                 ) {
+    $Downloads = Import or Install-module -modulename ADPowershell -force 
+    $ADUserss  = get-ADUsers -name <string> format-table CurrentUsers, Administrator, * *  | 
+                 Select-Name like " %  % or *  * " 
+                 Write-host "These CurrentUsers need to be reviews for apposite corrective actions:" @{ Revoke-$ADUerss }
+    }           
+   $patch = Switch @{ $ADUserss in do: 
+          *)      
+          ') 
