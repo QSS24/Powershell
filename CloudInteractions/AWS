@@ -1,0 +1,12 @@
+PowershellAWS.ps1
+
+Function $AWSshell {
+    $AWShell = Install or import modules -modulesname AWSPowershell 
+               -Key "    "
+               -Secret "   "
+    $EC2Ins = get-EC2Instance <str> | format-table " Regtions, Authenticated " 
+                      Select-Regions *Current*
+    $EC2Vpn = get-EC2Vpn  
+    $S3bucket = get-S3Bucket 
+}
+        
