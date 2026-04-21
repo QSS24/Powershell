@@ -4,9 +4,16 @@ Function $AWSshell {
     $AWShell = Install or import modules -modulesname AWSPowershell 
                -Key "    "
                -Secret "   "
-    $EC2Ins = get-EC2Instance <str> | format-table " Regtions, Authenticated " 
+    $EC2Ins = get-EC2Instance <str> | format-table " Regtions, Authenticated " |
+              Write-host "Selected Regions object are:" 
+              ForEach - Object {
                       Select-Regions *Current*
+              } if {
+              }
     $EC2Vpn = get-EC2Vpn  
     $S3bucket = get-S3Bucket 
 }
-        
+
+
+Function $AWSIAM( [cmdletbinding required = true],) {
+    }
