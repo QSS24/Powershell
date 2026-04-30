@@ -1,0 +1,5 @@
+Function Entra_Shell(int[], str[]: users) { 
+    Entra_Mod = install-Modules -Name EntraIDPowerShell -Version *latest* 
+    Users = Create-
+}
+   
